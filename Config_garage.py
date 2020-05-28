@@ -1,4 +1,4 @@
-""" Configuration file for the <wherever> NodeMCU
+""" Configuration file for the Garage NodeMCU
 """
 import machine
 import dht
