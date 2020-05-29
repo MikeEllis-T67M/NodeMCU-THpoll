@@ -26,8 +26,8 @@ def main():
             measurements += DS18B20.read_ds(Config.onewirePin, Config.location)    
             measurements += DHT.read_dht(Config.dhtPin, Config.location)
             if measurements:
-                print('\nSending to {}\n{}'.format(Config.database,measurements))
-                print('HTTP:{0}'.format(Influx.send(Config.database, measurements)))   
+                print('\nSending to {}\n{}'.format(Config.database, measurements))
+                print('HTTP:{0}'.format(Influx.send(Config.database, measurements)))
             else:
                 print('No sensors read successfully.')
 
