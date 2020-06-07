@@ -17,7 +17,12 @@ def connect_wifi(ssid, passphrase):
         
     Side effects:
     """
+    ap_if = network.WLAN(network.AP_IF)
+    ap_if.active(False)
+
     sta_if = network.WLAN(network.STA_IF)
+    sta_if.active(True)
+
     if sta_if.isconnected():
         print('Already connected!')
         return sta_if
@@ -31,6 +36,7 @@ def connect_wifi(ssid, passphrase):
             if sta_if.isconnected():
                 print('success!')
                 return sta_if
+
             time.sleep_ms(500)
             if t == 40 or t == 80:
                 # One more try....
